@@ -1,0 +1,49 @@
+.itemCardArea {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.itemCardArea .itemCard {
+    width: 200px;
+    height: 100%;
+}
+
+.itemCardArea .itemCard .itemMedia {
+    text-align: center;
+    height: 200px;
+}
+
+.itemCardArea .itemCard .itemMedia .itemImage img {
+    width: 150px;
+    height: 150px;
+}
+
+.itemCardArea .itemCard .itemMedia .itemImage p {
+    height: 50px;
+}
+
+.itemCardArea .itemCard .cardActionArea {
+    display: flex;
+    justify-content: space-around;
+    height: 25px;
+    background-color: #555;
+    color: white;
+}
+
+.itemCardArea .itemCard .cardActionArea .view {
+    width: 100px;
+    background-color: #333;
+    padding: 0 5px;
+}
+
+.itemCardArea .itemCard .cardActionArea .price {
+    width: 75px;
+    background-color: #0060c1;
+    padding: 0 5px;
+}
+.itemCardArea .itemCard .cardActionArea .fav {
+    width: 25px;
+    text-align: center;
+}

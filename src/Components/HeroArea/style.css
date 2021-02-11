@@ -1,0 +1,30 @@
+.heroArea {
+    height: 400px;
+    background-image: url('https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/teenager-drinking-protein-shake.jpg?w=1155&h=1528');
+    display: flex;
+    align-items: center;
+    background-size: cover;
+}
+
+.heroArea .heroContent {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.heroArea .heroContent > p {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.heroArea .heroContent > button {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    transition: 0.2s;
+}
+
+.heroArea .heroContent > button:hover {
+    width: 120px;
+}

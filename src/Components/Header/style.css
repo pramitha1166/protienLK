@@ -1,0 +1,140 @@
+.noListStyle {
+    list-style: none;
+}
+
+.topHeader  {
+    border-bottom: 1px solid #DDD;
+    padding: 6px 0px 3px 0;
+    margin: 0px;
+    height: 45px;
+}
+
+.topHeader > .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.topHeader .phoneNumber {
+    font-size: small;
+    margin: 5px 0px;
+
+}
+
+.topHeader .phoneNumber > p > span {
+    margin: 0 5px;
+}
+
+@media(max-width: 1200px) {
+    .topHeader .phoneNumber > p > span.num {
+        visibility: hidden;
+    }
+}
+
+.topHeader .topHeaderNav ul {
+    list-style: none;
+    display: flex;
+} 
+
+
+
+.topHeader .topHeaderNav ul li {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/*main header*/
+.mainHeader {
+    padding: 5px;
+    min-height: 50px;
+}
+
+.mainHeader .logo {
+    text-align: center;
+}
+
+.mainHeader .cartTot {
+    margin: 7px;
+    text-align: center;
+}
+
+.mainHeader .searchArea {
+    float: right;
+}
+
+.mainHeader .searchBar {
+    margin: 2px;
+    display: flex;
+    border-left: 2px solid black;
+    text-align: center;
+}
+
+.mainHeader .searchBar > input {
+    height: 30px;
+    border: none;
+    width: 80%;
+}
+
+.mainHeader .searchBar .searchIcon {
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+    text-align: center;
+}
+
+.mainHeader  .cartTot {
+    display: flex;
+}
+
+/*bottumHeader*/
+
+.bottumHeader li.nav-item {
+    cursor: pointer;
+}
+
+.bottumHeader .dropdown-menu {
+    min-width: 55rem;
+}
+
+.bottumHeader .dropdown-menu .menuContent {
+    display: table;
+}
+
+.bottumHeader .dropdown-menu .tableCell {
+    display: table-cell;
+}
+
+@media(max-width: 992px) {
+    .bottumHeader .dropdown-menu .tableCell {
+        display: block;
+    }
+    .bottumHeader .dropdown-menu {
+        min-width: 10rem;
+    }
+}
+
+.bottumHeader .dropdown-menu ul ul {
+    min-width: 160px;
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    line-height: 20px;
+    color: #333333;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.bottumHeader .dropdown-menu ul a {
+    min-width: 160px;
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    line-height: 20px;
+    color: #333333;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.bottumHeader .meniIcon {
+    display: none;
+}
+

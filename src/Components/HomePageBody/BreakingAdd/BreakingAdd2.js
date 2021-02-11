@@ -10,19 +10,19 @@ const BreakingAdd2 = () => {
 
     const items = [
         {
-            icon: DriveEtaIcon,
+            icon: <DriveEtaIcon />,
             title: 'Delivery Available'
         },
         {
-            icon: CheckCircleIcon,
+            icon: <CheckCircleIcon />,
             title: 'Quality Guanranteed'
         },
         {
-            icon: FavoriteBorderIcon,
+            icon: <FavoriteBorderIcon/>,
             title: 'Lowest Price Guaranteed'
         },
         {
-            icon: StarsIcon,
+            icon: <StarsIcon />,
             title: 'Solo Agent For myprotien'
         }
     ]
@@ -30,9 +30,11 @@ const BreakingAdd2 = () => {
     return (
         <div className="breakingAdd2">
           <div className="container">
-            {items.map((item) => (
-                <Item icon={item.icon} title={item.title} />
-            ))}
+              <div className="row">
+              {items.map((item) => (
+                <Item itemIcon={item.icon} title={item.title} />
+                ))}
+              </div>
           </div>
         </div>
     )

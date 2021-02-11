@@ -1,0 +1,40 @@
+.footerArea {
+    background: #303e4b;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.table {
+    display: table;
+}
+
+.table-cell {
+    display: table-cell;
+}
+
+.noListStyle {
+    list-style: none;
+}
+
+.noLinkStyle {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+
+.noLinkStyle:hover {
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+    text-decoration: none;
+}
+
+.titleText {
+    font-size: 15px;
+    color: aqua;
+    font-weight: 500;
+}
+
+li {
+    color: white;
+}

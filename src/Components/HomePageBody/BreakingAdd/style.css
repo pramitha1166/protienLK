@@ -1,3 +1,18 @@
+.breakingAdd2 {
+    background-color: rgb(0 96 193);
+    margin-top: 80px;
+    color: white;
+}
+.breakingAdd2 .container {
+    padding: 10px;
+}
+
 .item {
     display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.item .title {
+    margin: 0 5px;
 }

@@ -1,0 +1,232 @@
+/*main page*/
+.banner {
+    height: 100px;
+    width: 100%;
+    background-image: url('https://img3.goodfon.com/wallpaper/big/7/a8/fitness-model-gym-sport.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-items: center;
+}
+
+.banner .banner-content {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+}
+
+.banner .banner-content h3 {
+    margin: 20px 5px;
+    color: white;
+    font-weight: 700;
+}
+
+/*common*/
+
+.noListStyle {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+p {
+    font-size: 12px;
+    color: black;
+}
+
+.disabledSelect {
+    background: #0060c1;
+    color: #FFF;
+}
+
+select {
+    border-radius: 0px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+/*top*/
+
+.top {
+    margin: 20px 0;
+    margin-bottom: 40px;
+}
+
+.top .top-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.top .top-container .media img {
+    width: 400px;
+    height: 300px;
+}
+
+.top .top-container .media {
+    display: block;
+}
+
+/*action*/
+
+.top .top-container .media .action {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.top .top-container .media .action a {
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+}
+
+.top .top-container .media .action a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.top .top-container .media .action a span .icon {
+    margin-right: 5px;
+    font: 12px;
+    font-weight: 500;
+}
+
+/*details-container*/
+
+.top .details-container {
+    line-height: 15px;
+}
+
+.top .details-container .basic-details ul  {
+     line-height: 5px; 
+}
+
+@media(max-width:575px) {
+    .top .details-container {
+        margin-top: 50px;
+        text-align: inherit;
+    }
+
+    .top .details-container ul.basic-details {
+        line-height: 1;
+    }
+}
+
+/*price*/
+.top .details-container .price h5 {
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/*main details*/
+
+.top .details-container .main-details {
+    padding-left: 15px;
+    line-height: 2;
+}
+
+.top .details-container .main-details li {
+    color: black;
+    font-size: 15px;
+}
+.top .details-container .main-details li span .listIcon {
+    color: red;
+    font-size: 15px;
+    margin-top: -4px;
+}
+
+
+
+
+/*selection*/
+
+.selection {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #EEE;
+}
+
+.selection h4 {
+    font-size: 25px;
+}
+
+.selection h5 {
+    font-size: 15px;
+}
+
+.selection .addCartArea {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.selection .addCartArea input {
+    width: 20%;
+    float: left;
+}
+
+.selection .addCartArea .input-quantity-label {
+    width: 15%;
+    float: left;
+    margin-top: 7px;
+}
+
+.selection .addCartArea button.btn-cart {
+    width: 63%;
+    height: 34px;
+    float: left;
+    margin-left: 1%;
+    border: 0px;
+    background: #0060c1;
+    font-size: 14px;
+    color: #FFF;
+}
+
+@media(max-width:992px) {
+    .selection {
+        margin-top: 20px;
+    }
+}
+
+/*middle section*/
+
+.middle {
+    margin: 20px 0;
+}
+
+.middle .tabArea {
+    margin-top: 20px;
+}
+
+ .middle .tabArea ol.orderList li {
+    color: black;
+} 
+
+/*bottum*/
+
+.bottum {
+    margin: 40px 0px;
+}

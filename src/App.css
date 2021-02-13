@@ -1,3 +1,13 @@
+/* body {
+  line-height: 8px;
+  width: 100%;
+} */
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .breakingAdd {
   width: 100%;
   height: auto;

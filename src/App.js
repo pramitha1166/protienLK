@@ -4,25 +4,33 @@ import './App.css'
 import HeroArea from './Components/HeroArea/HeroArea'
 import {Feature,Brand,BreakingAdd2} from './Components/HomePageBody/index'
 import Footer from './Components/Footer/Footer'
+import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom'
+import Home from './Home'
+import ItemPage from './Components/ItemPage/ItemPage'
 
 class App extends Component {
   render() {
     return(
       <div>
-        <TopHeader />
-        {/* <MainHeader /> */}
-        <BottumHeader / >
-        <HeroArea />
-        <div className="mt-3">
-          <Feature headerName={'Feature Products'} />
-          <Feature headerName={'Recomend Products'} />
-        </div>
-        <div className="breakingAdd">
-          <h3>Island Delivery Available</h3>
-        </div>
-        <Brand />
-        <BreakingAdd2 />
-        <Footer />
+        <Router>
+          <TopHeader />
+          <MainHeader />
+          <BottumHeader / >
+         
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/item">
+              <ItemPage />
+            </Route>
+          </Switch>
+
+          
+
+          <Footer />
+
+        </Router>
       </div>
     )
   }

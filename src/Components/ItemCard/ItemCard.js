@@ -16,7 +16,7 @@ const ItemCard = () => {
                 </div>
                 <div className="cardActionArea">
                     <div className="view">
-                        <a>View Details</a>
+                        <a>View</a>
                     </div>
                     <div className="price">
                         <p>Rs.10000</p>

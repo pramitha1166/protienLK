@@ -9,7 +9,7 @@ const MainHeader = () => {
                 <div className="logo col-lg-4 col-sm-12 col-xs-12">
                     <img src="https://www.protein.lk/image/catalog/logo.gif" alt="logo" />
                 </div>
-                <div className="col-lg-8 col-sm-12 col-xs-12 mt-2" style={{justifyContent:'space-between'}}>
+                {/* <div className="col-lg-8 col-sm-12 col-xs-12 mt-2" style={{justifyContent:'space-between'}}>
                     <div className="row">
                         <div className="cartTot col-lg-5 col-sm-5 col-xs-12">
                             <ShoppingCartIcon fontSize="large"/>
@@ -24,7 +24,7 @@ const MainHeader = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

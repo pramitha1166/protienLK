@@ -8,6 +8,16 @@
 .itemCardArea .itemCard {
     width: 200px;
     height: 100%;
+    padding: 5px;
+    transition: 0.5s;
+}
+
+.itemCardArea .itemCard:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #eee;
+    background-color: #eee;
+    opacity: 0.9;
+    height: 105%;
 }
 
 .itemCardArea .itemCard .itemMedia {
@@ -43,6 +53,12 @@
     background-color: #0060c1;
     padding: 0 5px;
 }
+
+.itemCardArea .itemCard .cardActionArea .price p {
+    color: white;
+    font-size: 15px;
+}
+
 .itemCardArea .itemCard .cardActionArea .fav {
     width: 25px;
     text-align: center;

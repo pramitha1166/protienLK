@@ -24,7 +24,7 @@
     margin: 0 5px;
 }
 
-@media(max-width: 1200px) {
+@media(max-width: 568px) {
     .topHeader .phoneNumber > p > span.num {
         visibility: hidden;
     }
@@ -35,7 +35,9 @@
     display: flex;
 } 
 
-
+.topHeader .topHeaderNav ul .MuiSvgIcon-root {
+    color: black;
+}
 
 .topHeader .topHeaderNav ul li {
     margin: 0 5px;

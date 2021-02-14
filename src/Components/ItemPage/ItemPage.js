@@ -3,15 +3,14 @@ import './style.css'
 import Top from './Top'
 import Middle from './Middle'
 import Bottum from './Bottum'
+import Banner from '../HeaderBanners/Banner'
 
 const ItemPage = () => {
     return (
         <div className="itemPage">
-            <div className="banner">
-                <div className="container banner-content">
-                    <h3>Impact Whey Protien</h3>
-                </div>
-            </div>
+            
+            <Banner />
+
             <div className="container">
                 <Top />
                 <Middle />

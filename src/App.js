@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer'
 import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom'
 import Home from './Home'
 import ItemPage from './Components/ItemPage/ItemPage'
+import ListingPage from './Components/ListingPage/ListingPage'
 
 class App extends Component {
   render() {
@@ -23,6 +24,9 @@ class App extends Component {
             </Route>
             <Route exact path="/item">
               <ItemPage />
+            </Route>
+            <Route exact path="/list">
+              <ListingPage />
             </Route>
           </Switch>
 

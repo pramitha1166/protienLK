@@ -1,0 +1,21 @@
+.banner {
+    height: 100px;
+    width: 100%;
+    background-image: url('https://img3.goodfon.com/wallpaper/big/7/a8/fitness-model-gym-sport.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-items: center;
+}
+
+.banner .banner-content {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+}
+
+.banner .banner-content h3 {
+    margin: 20px 5px;
+    color: white;
+    font-weight: 700;
+}

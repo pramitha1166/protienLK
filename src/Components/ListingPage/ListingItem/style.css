@@ -1,0 +1,63 @@
+.listing-item {
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 1px 2px 3px rgb(219, 212, 212);
+}
+
+.listing-item:hover {
+    box-shadow: 1px 2px 6px rgb(219, 212, 212);
+    cursor: pointer;
+}
+
+.listing-item .item-card {
+    padding-top: 5px;
+    height: 295px;
+}
+
+.listing-item .item-card .item-media {
+    text-align: center;
+}
+
+.listing-item .item-card .item-media:hover {
+    opacity: 0.8;
+}
+
+.listing-item .item-card .item-media img {
+    width: 150px;
+    height: 150px;
+}
+
+.listing-item .item-card .item-content {
+    margin-top: 10px;
+    height: 130px;
+}
+
+.listing-item .item-card .item-content .title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.listing-item .item-card .item-content .price-rating {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    line-height: 0;
+}
+.listing-item .item-card .item-content .view-btn {
+    margin-top: 20px;
+    text-align: center;
+}
+.listing-item .item-card .item-content .view-btn button {
+    background: none;
+    border: 1px solid #0060c1;
+    width: 40%;
+}
+
+.listing-item .item-card .item-content .view-btn button:hover{
+    background: #0060c1;
+    color: white;
+    border: none;
+}
+

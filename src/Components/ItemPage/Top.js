@@ -4,12 +4,12 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CompareArrowsIcon from '@material-ui/icons/CompareArrows';
 
-const Top = () => {
+const Top = ({product}) => {
     return (
         <div className="row top">
             <div className="col-lg-5 col-md-6 col-sm-6 top-container">
                 <div className="media">
-                    <img src="https://www.protein.lk/image/cache/catalog/Rebrand/impact%20whey%20protein%202-700x500.jpg" />
+                    <img src={`${product.images[0].src}`} />
                     <div className="action">
                     <a href="#" ><span><FavoriteIcon className="icon" fontSize="small" /></span>Add To Wishlist</a>
                     <a href="#" ><span><CompareArrowsIcon className="icon" fontSize="small" /></span>Add To Compare</a>

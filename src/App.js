@@ -16,7 +16,7 @@ class App extends Component {
         <Router>
           <TopHeader />
           <MainHeader />
-          <BottumHeader / >
+          <BottumHeader />
          
           <Switch>
             <Route exact path="/">

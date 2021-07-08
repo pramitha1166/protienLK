@@ -1,15 +1,36 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './style.css'
 
 import ListIcon from '@material-ui/icons/List';
 import AppsIcon from '@material-ui/icons/Apps';
 import ListingItem from './ListingItem/ListingItem'
+import { withRouter } from 'react-router';
 
-const ListingArea = () => {
+const ListingArea = (props) => {
+
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState([])
+
+    const fetchProducts = () => {
+        fetch('http://localhost:5001/products/getall')
+            .then(res=> {return res.json()})
+            .then(res=> {
+                setProducts(res.result)
+                console.log(res.result)
+            })
+            .catch(err=> {
+                console.log(err)
+            })
+    }
+
+    useEffect(() => {
+        fetchProducts()
+    },[])
+
     return (
         <div className="listing-area">
             <div className="header">
-                <h4>Protien Warter</h4>
+                <h4>Our Products</h4>
                 <div className="filter-area row">
                     <div className="col-sm-4 hiddenXs">
                         <div className="listIcon">
@@ -32,10 +53,11 @@ const ListingArea = () => {
                     </div>
                 </div>
                 <div className="items-area row">
-                    <ListingItem />
-                    <ListingItem />
-                    <ListingItem />
-                    <ListingItem />
+
+                    {products.map((product, index) => (
+                        <ListingItem title={product.name}  price={product.price} image={product.images[0].src} product={product} props={props} />
+                    ))}
+
                 </div>
             </div>
 
@@ -44,4 +66,4 @@ const ListingArea = () => {
     )
 }
 
-export default ListingArea
+export default  withRouter(ListingArea)

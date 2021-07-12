@@ -1,10 +1,23 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import './style.css'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import CompareArrowsIcon from '@material-ui/icons/CompareArrows';
+import { parseHTML } from 'jquery';
+import parse from 'html-react-parser'
+import HTMLReactParser from 'html-react-parser';
+const nl2br = require('react-nl2br');
 
-const Top = ({product}) => {
+const Top = ({product,short_description}) => {
+
+    const showShortDescription = () => {
+        let des = document.getElementById("shortDes")
+    }
+
+    useEffect(() => {
+        showShortDescription()
+    },[])
+
     return (
         <div className="row top">
             <div className="col-lg-5 col-md-6 col-sm-6 top-container">
@@ -18,20 +31,33 @@ const Top = ({product}) => {
                 
             </div>
             <div className="col-lg-4 col-md-6 col-sm-6 details-container">
-                <ul className="noListStyle basic-details">
-                    <li><p>Product Code: Impact Whey Protein1474523205</p></li>
-                    <li><p>Availability: In Stock</p></li>
+                <ul  className="noListStyle basic-details">
+                    <li><p>Product Code: {product.slug}{product.id}</p></li>
+                    <li><p>Availability: <span className="instock">In Stock</span></p></li>
                 </ul>
-                <h3>Impact Whey Protein</h3>
-                <ul className="noListStyle price"><h5>Rs.10,000.00</h5></ul>
-                <ul className="noListStyle main-details">
+                <h3>{product.name}</h3>
+                    {product.sale_price === "" ? (<></>) 
+                    : (<>
+                        <p className="sale-icon">sale</p>
+                    </>)}
+                
+                <div className="price">
+                    <h5>Rs.{product.price}</h5>
+                    {product.sale_price === "" ? (<></>) 
+                    : (<>
+                        <h4 className="sale">Rs.9500</h4>
+                    </>)}
+                    
+                </div>
+                {/* <ul className="noListStyle main-details">
                     <li><span><ArrowForwardIcon  className="listIcon" /></span> 21g protein per serving*</li>
                     <li><span><ArrowForwardIcon  className="listIcon" /></span> 4.5g naturally-occurring BCAAs</li>
                     <li><span><ArrowForwardIcon  className="listIcon" /></span> Low in sugar*</li>
                     <li><span><ArrowForwardIcon  className="listIcon" /></span> Over 40 delicious flavours</li>
                     <li><span><ArrowForwardIcon  className="listIcon" /></span> *Nutritional information will vary depending on flavour.</li>
-                </ul>
-                
+                </ul> */}
+                <div dangerouslySetInnerHTML={{__html: product.short_description}}></div>
+                <div id="shortDes"></div>
             </div>
             <div className="col-lg-3 col-md-8 col-sm-12">
                 <div className="selection">

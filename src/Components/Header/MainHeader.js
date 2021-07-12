@@ -1,12 +1,18 @@
 import React from 'react'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
+import { withRouter } from 'react-router';
 
-const MainHeader = () => {
+const MainHeader = (props) => {
+
+    const clickLogo = () => {
+        props.history.push('/')
+    }
+
     return (
         <div className="mainHeader container">
             <div className="row" style={{width:'100%'}}>
-                <div className="logo col-lg-4 col-sm-12 col-xs-12">
+                <div className="logo col-lg-4 col-sm-12 col-xs-12" onClick={clickLogo}>
                     <img src="https://www.protein.lk/image/catalog/logo.gif" alt="logo" />
                 </div>
                 {/* <div className="col-lg-8 col-sm-12 col-xs-12 mt-2" style={{justifyContent:'space-between'}}>
@@ -30,4 +36,4 @@ const MainHeader = () => {
     )
 }
 
-export default MainHeader
+export default withRouter(MainHeader)

@@ -52,6 +52,7 @@
 
 .mainHeader .logo {
     text-align: center;
+    cursor: pointer;
 }
 
 .mainHeader .cartTot {
@@ -134,6 +135,11 @@
     color: #333333;
     font-size: 13px;
     font-weight: 600;
+}
+
+.bottumHeader .dropdown-menu ul a:hover {
+    color: #333333;
+    text-decoration: underline;
 }
 
 .bottumHeader .meniIcon {

@@ -1,36 +1,55 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import './style.css'
-
 import ListIcon from '@material-ui/icons/List';
 import AppsIcon from '@material-ui/icons/Apps';
 import ListingItem from './ListingItem/ListingItem'
 import { withRouter } from 'react-router';
+import { ProductContext } from '../../context/ProductContext';
 
 const ListingArea = (props) => {
 
+    //const [products, setProducts] = useContext(ProductContext)
     const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState([])
+    const [loading, setLoading] = useState(false)
 
-    const fetchProducts = () => {
-        fetch('http://localhost:5001/products/getall')
-            .then(res=> {return res.json()})
-            .then(res=> {
-                setProducts(res.result)
-                console.log(res.result)
-            })
-            .catch(err=> {
-                console.log(err)
-            })
-    }
+    // const fetchProducts = () => {
+    //     setLoading(true)
+    //     fetch('/products/getall')
+    //         .then(res=> {return res.json()})
+    //         .then(res=> {
+    //             setLoading(false)
+    //             setProducts(res.result)
+    //             console.log(res.result)
+    //         })
+    //         .catch(err=> {
+    //             setLoading(false)
+    //             console.log(err)
+    //         })
+    // }
+
+    // useEffect(() => {
+    //     fetchProducts()
+    // },[])
 
     useEffect(() => {
-        fetchProducts()
+
+        // window.addEventListener('storage', () => {
+        //     setProducts(JSON.parse(localStorage.getItem("products")))
+        // })
+
+        async function init() {
+            const data = await localStorage.getItem("products")
+            setProducts(JSON.parse(data))
+        }
+
+        init()
+        
     },[])
 
     return (
         <div className="listing-area">
             <div className="header">
-                <h4>Our Products</h4>
+                <h4>{localStorage.getItem('title')}</h4>
                 <div className="filter-area row">
                     <div className="col-sm-4 hiddenXs">
                         <div className="listIcon">
@@ -54,9 +73,15 @@ const ListingArea = (props) => {
                 </div>
                 <div className="items-area row">
 
-                    {products.map((product, index) => (
-                        <ListingItem title={product.name}  price={product.price} image={product.images[0].src} product={product} props={props} />
-                    ))}
+                    {loading ? (
+                        <i>Loading...</i>    
+                    ) 
+                    : (
+                        products.map((product,index) => (
+                            <ListingItem title={product.name}  price={product.price} image={product.images[0].src} product={product} props={props} />
+                        ))
+                    )}
+
 
                 </div>
             </div>

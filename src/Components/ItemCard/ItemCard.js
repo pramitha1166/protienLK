@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-const ItemCard = () => {
+const ItemCard = ({product}) => {
     return (
         <div className="itemCardArea col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div className="itemCard">
@@ -11,7 +11,7 @@ const ItemCard = () => {
                         <img src="https://www.protein.lk/image/cache/catalog/Rebrand/curcumin%20and%20vitamin%20d%202-200x200.jpg" alt="item-image" />
                     </div>
                     <div className="itemName">
-                        <p>Curcumin & Vitamin D3 Capsule</p>
+                        <p>{product.name}</p>
                     </div>
                 </div>
                 <div className="cardActionArea">
@@ -19,7 +19,7 @@ const ItemCard = () => {
                         <a>View</a>
                     </div>
                     <div className="price">
-                        <p>Rs.10000</p>
+                        <p>{product.price}</p>
                     </div>
                     <div className="fav">
                         <FavoriteIcon fontSize="small"/>

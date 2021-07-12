@@ -8,11 +8,13 @@ import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom'
 import Home from './Home'
 import ItemPage from './Components/ItemPage/ItemPage'
 import ListingPage from './Components/ListingPage/ListingPage'
+import { ProductProvider } from "./context/ProductContext"
 
 class App extends Component {
   render() {
     return(
       <div>
+        <ProductProvider>
         <Router>
           <TopHeader />
           <MainHeader />
@@ -35,6 +37,7 @@ class App extends Component {
           <Footer />
 
         </Router>
+        </ProductProvider>
       </div>
     )
   }

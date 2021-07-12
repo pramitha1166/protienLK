@@ -8,17 +8,16 @@ import { withRouter } from 'react-router'
 
 const ItemPage = (props) => {
 
-    const [product,setProduct] = useState({})
+    const [loading, setLoading] = useState(false)
+    const [err, setErr] = useState(false)
 
     useEffect(() => {
         if(localStorage.getItem("product")==undefined) {
             props.history.push('list')
         }else {
-            let prod = localStorage.getItem("product")
-            console.log(prod)
-            setProduct(JSON.parse(prod))
+           // setProduct(localStorage.getItem("product"))
+           // console.log(localStorage.getItem("product"))
         }
-        console.log(product)
     },[])
 
     return (
@@ -27,9 +26,9 @@ const ItemPage = (props) => {
             <Banner />
 
             <div className="container">
-                {/* <Top product={product} /> */}
-                <Middle product={product} />
-                <Bottum product={product} />
+                <Top product={JSON.parse(localStorage.getItem("product"))} short_description={JSON.parse(localStorage.getItem("product")).short_description}  />
+                <Middle product={JSON.parse(localStorage.getItem("product"))} />
+                <Bottum product={JSON.parse(localStorage.getItem("product"))} /> 
             </div>
         </div>
     )

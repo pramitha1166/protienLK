@@ -9,12 +9,15 @@ const Home = () => {
 
     const [featureProducts, setFeatureProducts] = useState([])
     const [onsaleProducts, setOnsaleProducts] = useState([])
+    const [loading, setLoading] = useState(false)
 
 
     const fetchFeatureProducts = () => {
+        setLoading(true)
         fetch(`${API}/products/list/featured`)
             .then(res => {return res.json()})
             .then(res => {
+                setLoading(false)
                 setFeatureProducts(res.result)
             })
             .catch(err => {
@@ -23,9 +26,11 @@ const Home = () => {
     }
 
     const fetchOnSaleProducts = () => {
+        setLoading(true)
         fetch(`${API}/products/list/onsale`)
             .then(res => {return res.json()})
             .then(res => {
+                setLoading(false)
                 setOnsaleProducts(res.result)
             })
             .catch(err => {
@@ -42,8 +47,17 @@ const Home = () => {
         <div>
             <HeroArea />
             <div className="mt-3">
-                <Feature headerName={'Feature Products'} relatedProducts={featureProducts} />
-                <Feature headerName={'On Sale Products'} relatedProducts={onsaleProducts} />
+                {loading ? (
+                    <>
+                        <i>Loading...</i>
+                    </>
+                ): (
+                    <>
+                        <Feature headerName={'Feature Products'} relatedProducts={featureProducts} />
+                        <Feature headerName={'On Sale Products'} relatedProducts={onsaleProducts} />
+                    </>
+                )}
+               
             </div>
             <div className="breakingAdd">
                 <h3>Island Delivery Available</h3>

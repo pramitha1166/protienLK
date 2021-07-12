@@ -13,7 +13,8 @@ class BottumHeader extends React.Component {
 
         this.state = {
             categories: [],
-            subCategories: []
+            subCategories: [],
+            loading: false
         }
     }
 
@@ -21,6 +22,10 @@ class BottumHeader extends React.Component {
 
         let arr = [];
         let get_result = [];
+
+        this.setState({
+            loading: true
+        })
 
         fetch(`${API}/category/getlAllSubCategories/${id}`)
             .then(res => {return res.json()})
@@ -30,7 +35,8 @@ class BottumHeader extends React.Component {
                 
 
                 this.setState({
-                    categories: res.result
+                    categories: res.result,
+                    loading: false
                 })
             })
             .catch(err=> {
@@ -41,6 +47,10 @@ class BottumHeader extends React.Component {
     fetchParentCategories() {
 
         let arr = []
+
+        this.setState({
+            loading: true
+        })
 
         fetch(`${API}/category/getlAllParentCategories`)
             .then(res => {return res.json()})
@@ -55,7 +65,8 @@ class BottumHeader extends React.Component {
                 console.log(arr)
 
                 this.setState({
-                    categories: arr
+                    categories: arr,
+                    loading: false
                 })
             })
             .catch(err=> {
@@ -111,17 +122,29 @@ class BottumHeader extends React.Component {
                                 </a>
                                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <div className="menuContent">
-                                        {categories.map((item,index) => (
-                                            <ul className="tableCell noListStyle">
-                                                {item.map((cate,index) => (
-                                                    <li key={index}>
-                                                        <a onClick={(e) => {this.showProduct(cate.id,cate.name)}}>{cate.name}</a>
-                                                        <SubCategory id={cate.id} />
-                                                    </li>
-                                                ))}
-                                                
-                                            </ul>
-                                        ))}
+
+                                        {this.state.loading ? 
+                                        (
+                                            <div className="loading">
+                                                <i>Loading</i>    
+                                            </div>
+                                        ) : 
+
+                                            categories.map((item,index) => (
+                                                <ul className="tableCell noListStyle">
+                                                    {item.map((cate,index) => (
+                                                        <li key={index}>
+                                                            <a onClick={(e) => {this.showProduct(cate.id,cate.name)}}>{cate.name}</a>
+                                                            <SubCategory id={cate.id} />
+                                                        </li>
+                                                    ))}
+                                                    
+                                                </ul>
+                                            ))
+                                            
+                                        }
+
+                                       
                                         
                                     </div>
                                 

@@ -6,10 +6,14 @@ const SubCategory = (props) => {
 
     const [subcategories, setSubcategories] = useState([])
 
+    const [loading, setLoading] = useState(false)
+
     const fetchSubCategories= (id) => {
+        setLoading(true)
         fetch(`${API}/category/getlAllSubCategories/${id}`)
         .then(res => {return res.json()})
         .then(res => {
+            setLoading(false)
           setSubcategories(res.result)
         })
         .catch(err=> {
@@ -27,9 +31,16 @@ const SubCategory = (props) => {
 
     return (
         <ul>
-            {subcategories.map((item,index) => (
-                <SubCategoryItem id={item.id} name={item.name} key={index} />
-            ))}
+            {loading ? 
+                (<div className="loading">
+                    <i>Loading</i>
+                </div>)
+                : 
+                subcategories.map((item,index) => (
+                    <SubCategoryItem id={item.id} name={item.name} key={index} />
+                ))
+            }
+           
         </ul>
     )
 }

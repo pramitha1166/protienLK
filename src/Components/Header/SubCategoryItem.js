@@ -4,6 +4,7 @@ import { API } from '../../API'
 
 const SubCategoryItem = (props) => {
 
+
     const showProduct = () => {
         console.log(props.id)
         fetch(`${API}/products/list/product/category/${props.id}`)

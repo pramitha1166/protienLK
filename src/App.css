@@ -26,3 +26,15 @@ html, body {
   font-weight: 600;
   color: #0060c1;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  filter: blur(8px);
+}
+
+.loading i {
+  font-size: 20px;
+}

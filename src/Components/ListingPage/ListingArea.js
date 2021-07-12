@@ -73,8 +73,8 @@ const ListingArea = (props) => {
                 </div>
                 <div className="items-area row">
 
-                    {loading ? (
-                        <i>Loading...</i>    
+                    {products.length<=0 ? (
+                        <i>No Result Found</i>    
                     ) 
                     : (
                         products.map((product,index) => (

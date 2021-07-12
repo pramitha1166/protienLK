@@ -8,7 +8,7 @@ const ItemCard = ({product}) => {
             <div className="itemCard">
                 <div className="itemMedia">
                     <div className="itemImage">
-                        <img src="https://www.protein.lk/image/cache/catalog/Rebrand/curcumin%20and%20vitamin%20d%202-200x200.jpg" alt="item-image" />
+                        <img src={`${product.images[0].src}`} alt="item-image" />
                     </div>
                     <div className="itemName">
                         <p>{product.name}</p>

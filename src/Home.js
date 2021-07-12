@@ -48,9 +48,9 @@ const Home = () => {
             <HeroArea />
             <div className="mt-3">
                 {loading ? (
-                    <>
+                    <div className="loading">
                         <i>Loading...</i>
-                    </>
+                    </div>
                 ): (
                     <>
                         <Feature headerName={'Feature Products'} relatedProducts={featureProducts} />

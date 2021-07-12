@@ -1,1 +1,1 @@
-const API = '';
+export const API = 'https://protienlk.herokuapp.com';

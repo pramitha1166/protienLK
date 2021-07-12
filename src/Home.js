@@ -3,6 +3,7 @@ import './App.css'
 import HeroArea from './Components/HeroArea/HeroArea'
 import {Feature,Brand,BreakingAdd2} from './Components/HomePageBody/index'
 import { ProductContext } from './context/ProductContext'
+import { API } from './API'
 
 const Home = () => {
 
@@ -11,7 +12,7 @@ const Home = () => {
 
 
     const fetchFeatureProducts = () => {
-        fetch('/products/list/featured')
+        fetch(`${API}/products/list/featured`)
             .then(res => {return res.json()})
             .then(res => {
                 setFeatureProducts(res.result)
@@ -22,7 +23,7 @@ const Home = () => {
     }
 
     const fetchOnSaleProducts = () => {
-        fetch('/products/list/onsale')
+        fetch(`${API}/products/list/onsale`)
             .then(res => {return res.json()})
             .then(res => {
                 setOnsaleProducts(res.result)

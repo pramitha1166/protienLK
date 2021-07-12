@@ -2,13 +2,14 @@ import React, {useContext} from 'react'
 import './style.css'
 import { Link, withRouter } from 'react-router-dom' 
 import { ProductContext } from '../../context/ProductContext'
+import { API } from '../../API'
 
 const HeroArea = (props) => {
 
     const [products,setProducts] = useContext(ProductContext)
 
     const shopNow = () => {
-        fetch('/products/getall')
+        fetch(`${API}/products/getall`)
             .then(res=> {return res.json()})
             .then(res=> {
                 setProducts(res.result)

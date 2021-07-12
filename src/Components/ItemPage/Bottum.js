@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './style.css'
 import Feature from '../HomePageBody/FeatureSection/Feature'
+import { API } from '../../API'
 
 const Bottum = ({product}) => {
 
@@ -9,7 +10,7 @@ const Bottum = ({product}) => {
 
     const fetchRelatedProducts = () => {
         setLoading(true)
-        fetch(`/products/list/product/category/${product.categories[0].id}`)
+        fetch(`${API}/products/list/product/category/${product.categories[0].id}`)
             .then(res => {return res.json()})
             .then(res => {
                 setLoading(false)

@@ -1,11 +1,12 @@
 import React from 'react'
 import { withRouter } from 'react-router'
+import { API } from '../../API'
 
 const SubCategoryItem = (props) => {
 
     const showProduct = () => {
         console.log(props.id)
-        fetch(`/products/list/product/category/${props.id}`)
+        fetch(`${API}/products/list/product/category/${props.id}`)
             .then(res => {return res.json()})
             .then(res => {
                 console.log(res.result)

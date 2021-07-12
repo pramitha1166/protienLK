@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import SubCategoryItem from './SubCategoryItem'
+import { API } from '../../API'
 
 const SubCategory = (props) => {
 
     const [subcategories, setSubcategories] = useState([])
 
     const fetchSubCategories= (id) => {
-        fetch(`/category/getlAllSubCategories/${id}`)
+        fetch(`${API}/category/getlAllSubCategories/${id}`)
         .then(res => {return res.json()})
         .then(res => {
           setSubcategories(res.result)

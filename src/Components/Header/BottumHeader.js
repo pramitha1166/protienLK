@@ -4,6 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import MenuIcon from '@material-ui/icons/Menu';
 import SubCategory from './SubCategory';
 import { withRouter } from 'react-router';
+import { API } from '../../API';
 
 class BottumHeader extends React.Component {
 
@@ -21,7 +22,7 @@ class BottumHeader extends React.Component {
         let arr = [];
         let get_result = [];
 
-        fetch(`/category/getlAllSubCategories/${id}`)
+        fetch(`${API}/category/getlAllSubCategories/${id}`)
             .then(res => {return res.json()})
             .then(res => {
 
@@ -41,7 +42,7 @@ class BottumHeader extends React.Component {
 
         let arr = []
 
-        fetch('/category/getlAllParentCategories')
+        fetch(`${API}/category/getlAllParentCategories`)
             .then(res => {return res.json()})
             .then(res => {
 
@@ -70,7 +71,7 @@ class BottumHeader extends React.Component {
 
     showProduct = (id,name) => {
         //console.log(props.id)
-        fetch(`/products/list/product/category/${id}`)
+        fetch(`${API}/products/list/product/category/${id}`)
             .then(res => {return res.json()})
             .then(res => {
                 console.log(res.result)

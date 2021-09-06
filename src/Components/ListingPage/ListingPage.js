@@ -6,7 +6,7 @@ import TopArea from './TopArea'
 const ListingPage = () => {
     return (
         <div className="listing-page">
-            <Banner title="PROTEIN WATER" />
+            <Banner title="Search Products" />
 
             <div className="container">
                 <TopArea />
